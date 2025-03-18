@@ -1,3 +1,23 @@
+@font-face {
+    font-family: IconaBlack;
+    src: url(font/IconaSansTRIAL-Black.otf);
+  }
+
+@font-face {
+    font-family: IconaBold;
+    src: url(font/IconaSansTRIAL-Bold.otf);
+    }
+
+@font-face {
+    font-family: IconaSemibold;
+    src: url(font/IconaSansTRIAL-Semibold.otf);
+}
+
+@font-face {
+    font-family: IconaRegular;
+    src: url(font/IconaSansTRIAL-Regular.otf);
+}
+
 /* Reset default margin dan padding */
 * {
     margin: 0;
@@ -41,7 +61,7 @@
 
 .logo h1 {
     font-size: 20px;
-    font-weight: bold;
+    font-family: IconaBlack;
 }
 
 .list-item ul {
@@ -59,8 +79,7 @@
 .list-item ul li a {
     text-decoration: none;
     font-size: 14px;
-    font-weight: 600;
-    font-family: "Poppins", sans-serif;
+    font-family: IconaBold;
     display: inline-block;
     padding: 5px 10px;
     transition: all 0.3s ease;
@@ -165,7 +184,7 @@
 
 .best-selling h2 {
     font-size: 36px;
-    font-weight: bold;
+    font-family: IconaBold;
     margin-bottom: 20px;
 }
 
@@ -213,7 +232,7 @@ body {
 
 .our-product h2 {
     font-size: 36px;
-    font-weight: bold;
+    font-family: IconaBold;
     margin-bottom: 20px;
 }
 
@@ -232,6 +251,7 @@ body {
     border-radius: 5px; 
     margin: 0;
     text-align: center;
+    font-family: IconaSemibold;
     font-size: 1.2rem;
 }
 
@@ -282,12 +302,13 @@ body {
 
 .product-info h3 {
     font-size: 16px;
-    font-weight: 600;
+    font-family: IconaSemibold;
     margin: 5px 0;
 }
 
 .product-info p {
     font-size: 14px;
+    font-family: IconaRegular;
     color: gray;
 }
 
