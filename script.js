@@ -66,3 +66,65 @@ window.addEventListener("scroll", function() {
     let navbar = document.querySelector(".navbar");
     navbar.classList.toggle("scrolled", window.scrollY > 50);
 });
+
+const products = [
+    {
+        image: "./image/product1.avif",
+        name: "SMART ANKLE PANTS (WOOL LIKE)",
+        category: "Men",
+        price: "$39.00",
+        bestSeller: true
+    },
+    {
+        image: "./image/product2.avif",
+        name: "FLANNEL SHIRT | LONG SLEEVE CHECKED",
+        category: "Men",
+        price: "$29.00",
+        bestSeller: true
+    },
+    {
+        image: "./image/product3.avif",
+        name: "SEERSUCKER VOLUME SKIRT",
+        category: "Women",
+        price: "$23.00",
+        bestSeller: true
+    }
+];
+
+const imgElement = document.getElementById("product-img");
+const nameElement = document.getElementById("product-name");
+const categoryElement = document.getElementById("product-category");
+const priceElement = document.getElementById("product-price");
+const bestSellerElement = document.getElementById("best-seller");
+
+// Fungsi untuk memperbarui tampilan produk
+function updateProduct() {
+    imgElement.src = products[currentIndex].image;
+    nameElement.textContent = products[currentIndex].name;
+    categoryElement.textContent = products[currentIndex].category;
+    priceElement.textContent = products[currentIndex].price;
+
+    // Menampilkan atau menyembunyikan label Best Seller
+    if (products[currentIndex].bestSeller) {
+        bestSellerElement.style.display = "inline-block";
+    } else {
+        bestSellerElement.style.display = "none";
+    }
+}
+
+// Event listener untuk tombol navigasi
+document.querySelector(".prev-btn").addEventListener("click", () => {
+    currentIndex = (currentIndex === 0) ? products.length - 1 : currentIndex - 1;
+    updateProduct();
+});
+
+document.querySelector(".next-btn").addEventListener("click", () => {
+    currentIndex = (currentIndex === products.length - 1) ? 0 : currentIndex + 1;
+    updateProduct();
+});
+
+// Memanggil fungsi pertama kali untuk menampilkan produk awal
+updateProduct();
+
+
+

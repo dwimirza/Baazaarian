@@ -42,18 +42,29 @@
         </div>
     </div>
 
-    <section class="best-selling">
-        <h2>BEST SELLING</h2>
-        <div class="carousel-best">
-            <div class="carousel-container-best">
-                <img src="./image/best_selling.png" alt="Best Selling Image">
-                <img src="./image/best_selling.png" alt="Best Selling Image">
-                <img src="./image/best_selling.png" alt="Best Selling Image">
-            </div>
-            <button class="prev" onclick="prevSlide1()">&#10094;</button>
-            <button class="next" onclick="nextSlide1()">&#10095;</button>
+    <div class="product-container">
+    <button class="prev-btn">‹</button>
+
+    <!-- Card putih membungkus gambar & info produk -->
+    <div class="product-card-best">
+        <div class="product-image">
+            <img id="product-img" src="" alt="Product Image">
         </div>
-    </section>
+
+        <div class="product-info-best">
+            <span id="best-seller" class="best-seller">BEST SELLER</span>
+            <h2 id="product-name"></h2>
+            <p id="product-category"></p>
+            <p id="product-price" class="price"></p>
+        </div>
+    </div>
+
+    <button class="next-btn">›</button>
+</div>
+  
+    
+    
+       
 
     <!-- section our product -->
     <section class="our-product" id="product">
@@ -161,4 +172,33 @@
     <script src="script.js"></script>
     <script src="cart.js"></script>
 </body>
+<footer class="contact-us" id="contact">
+    <div class="contact-title">CONTACT US</div> <!-- Tambahkan ini -->
+    
+    <div class="contact-container">
+        <div class="contact-info">
+            <p id="about-me">
+                Foot Locker, Inc. merupakan pemimpin terdepan untuk merayakan sneaker dan juga kultur kaum muda di berbagai belahan dunia. 
+                Dengan kurang lebih 3,000 toko ritel di 28 negara mencakup Amerika, Eropa, Asia, Australia dan juga New Zealand, 
+                dan juga website dan juga mobile app. Perusahaan kami memiliki tujuan untuk menginspirasi dan memberdayakan kultur kaum muda 
+                di berbagai belahan dunia dengan menyulut semangat bersama untuk mengekspresikan diri serta menciptakan pengalaman 
+                tak tertandingi di jantung komunitas sneaker global.
+            </p>
+            <div class="contact-details">
+                <p><i class="fa-brands fa-instagram"></i> @bazaarian.official</p>
+                <p><i class="fa-solid fa-phone"></i> 0852-0962-7595</p>
+                <p><i class="fa-solid fa-location-dot"></i> Kukusan - Depok</p>
+            </div>
+        </div>
+        
+        <div class="contact-form">
+            <input type="text" placeholder="NAME">
+            <input type="text" placeholder="EMAIL/MOBILE NUMBER">
+            <textarea placeholder="SUGGESTION"></textarea>
+            <button type="submit">SUBMIT</button>
+        </div>
+    </div>
+    <p class="copyright">© Copyright Web Design Bazaarian</p>
+</footer>
+
 </html>
