@@ -3,41 +3,76 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* font-family: 'Integral CF', sans-serif; */
+    scroll-behavior: smooth;
 }
 
+/* Navbar Styling */
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 50px;
+    background-color: transparent;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
-    background-color: white;
-    border-bottom: 1px solid #ddd; /* Garis tipis bawah navbar */
 }
 
-.navbar .logo, .navbar .list-item, .navbar .cart {
-    /* Menambahkan margin atau padding untuk menyesuaikan posisi */
-    margin: 0 50px; /* Menambahkan jarak antara elemen navbar */
+.navbar.scrolled {
+    background-color: white;
+    padding: 10px 50px;
+}
+
+.logo h1, 
+.list-item ul li a,
+.cart i {
+    color: white; 
+    transition: color 0.3s ease;
+}
+
+.navbar.scrolled .logo h1, 
+.navbar.scrolled .list-item ul li a,
+.navbar.scrolled .cart i {
+    color: black;
 }
 
 .logo h1 {
     font-size: 20px;
     font-weight: bold;
-    font-family: "Poppins", sans-serif;
 }
 
 .list-item ul {
     list-style: none;
     display: flex;
     gap: 80px;
+    padding: 0;
+    margin: 0;
+}
+
+.list-item ul li {
+    display: inline-block;
 }
 
 .list-item ul li a {
     text-decoration: none;
-    color: black;
     font-size: 14px;
     font-weight: 600;
     font-family: "Poppins", sans-serif;
+    display: inline-block;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+.list-item ul li a:hover {
+    color: gray;
+    transform: translateY(-4px);
+}
+
+.list-item ul li a:active {
+    transform: translateY(0);
 }
 
 .cart i {
@@ -45,45 +80,222 @@
     cursor: pointer;
 }
 
+
 /* carousel image */
 .carousel {
     position: relative;
-    width: 100vw; /* Lebar sesuai dengan lebar layar */
-    height: 90vh; /* Tinggi sesuai dengan tinggi layar */
-    margin: 0;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
+    margin: 0;
 }
 
 .carousel-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 300%; /* Sesuai jumlah gambar */
+    height: 100%;
 }
 
 .carousel-container img {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
+    flex: 0 0 100vw;
+    box-sizing: border-box;
 }
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5); 
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
 
 .carousel-button {
     position: absolute;
-    bottom: 30px;
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 10;
 }
 
 .carousel-button button {
-    background: black;
+    background: rgba(0, 0, 0, 0.7); /* Hitam dengan 70% opasitas */
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     font-size: 14px;
     border-radius: 20px;
+    transition: background 0.3s ease; /* Animasi transisi saat hover */
 }
 
 .carousel-button button:hover {
     background: white;
     color: black;
 }
+
+/* section best selling */
+.best-selling {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.best-selling h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.carousel-best {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-container-best {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+    justify-content: center;
+}
+
+.carousel-container-best img {
+    width: 80vw; /* Kurangi ukuran gambar agar ada ruang di kanan dan kiri */
+    height: 50vh; /* Kurangi tinggi gambar agar tidak memenuhi layar */
+    object-fit: cover;
+    box-sizing: border-box;
+    margin: 0 10vw; /* Memberikan margin kiri dan kanan */
+}
+
+
+/* section our product */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+    background-color: #f8f8f8;
+}
+
+.our-product {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.our-product h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.category-product {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.category-product h3 {
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 5px; 
+    margin: 0;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.category-product h3:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    max-width: 350px; /* Ubah dari 500px ke 350px agar lebih kecil */
+    width: 100%;
+    text-align: left;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.tag {
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.product-info h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.product-info p {
+    font-size: 14px;
+    color: gray;
+}
+
+.price-box {
+    color: black;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
