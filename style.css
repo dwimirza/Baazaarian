@@ -18,12 +18,12 @@
     src: url(font/IconaSansTRIAL-Regular.otf);
 }
 
-/* Reset default margin dan padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
 /* Navbar Styling */
@@ -32,10 +32,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 15px 50px;
+    padding: 20px 50px;
     background-color: transparent;
     transition: background-color 0.3s ease, padding 0.3s ease;
-    z-index: 1000;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,13 +43,18 @@
 
 .navbar.scrolled {
     background-color: white;
-    padding: 10px 50px;
 }
 
+
 .logo h1, 
-.list-item ul li a,
-.cart i {
+.list-item ul li a {
     color: white; 
+    font-family: IconaBold;
+    transition: color 0.3s ease;
+}
+
+.cart i {
+    color: white;
     transition: color 0.3s ease;
 }
 
@@ -133,7 +138,7 @@
     padding: 15px;
     cursor: pointer;
     font-size: 20px;
-    z-index: 10;
+    z-index: 1;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -155,7 +160,7 @@
     bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 10;
+    z-index: 1;
 }
 
 .carousel-button button {

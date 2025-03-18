@@ -4,10 +4,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./cart.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <title>BAZAARIAN</title>
     </head>    
 <body>
+    <div class="overlay" id="overlay" onclick="toggleCart()"></div>
     <!-- nav bar -->
      <nav class="navbar">
         <div class="logo">
@@ -20,7 +22,7 @@
                 <li><a href="#contact">CONTACT</a></li>
             </ul>
         </div>
-        <div class="cart">
+        <div class="cart-logo" onclick="toggleCart()">
             <i class="fa-solid fa-cart-shopping"></i>
         </div>
      </nav>
@@ -145,8 +147,18 @@
                 </div>
             </div>
         </div>
+        <!-- Cart Sidebar -->
+    <div class="cart" id="cart">
+        <h2>Cart <span style="float: right; cursor: pointer;" onclick="toggleCart()">❌</span></h2>
+        <div id="cart-items"></div>
+        <div class="row">
+            <h3 class="total-price">Total: <br><span id="total-price">0.00</span></h3>
+            <button class="checkout-btn" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
     </section>
 
     <script src="script.js"></script>
+    <script src="cart.js"></script>
 </body>
 </html>
