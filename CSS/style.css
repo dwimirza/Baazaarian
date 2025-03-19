@@ -53,14 +53,14 @@
     transition: color 0.3s ease;
 }
 
-.cart i {
+.cart-logo i {
     color: white;
     transition: color 0.3s ease;
 }
 
 .navbar.scrolled .logo h1, 
 .navbar.scrolled .list-item ul li a,
-.navbar.scrolled .cart i {
+.navbar.scrolled .cart-logo i {
     color: black;
 }
 
@@ -99,7 +99,7 @@
     transform: translateY(0);
 }
 
-.cart i {
+.cart-logo i {
     font-size: 18px;
     cursor: pointer;
 }
