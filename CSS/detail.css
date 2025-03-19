@@ -194,15 +194,6 @@
     background-color: black;
     color: white;
     font-size: 16px;
-    font-family: "Poppins", sans-serif;
+    font-family: IconaRegular;
     cursor: pointer;
-}
-
-.size-guide {
-    display: block;
-    margin-top: 10px;
-    font-size: 14px;
-    color: blue;
-    text-decoration: none;
-    font-family: "Poppins", sans-serif;
 }
