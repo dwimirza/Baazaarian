@@ -180,43 +180,101 @@
 }
 
 /* section best selling */
-.best-selling {
-    text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 50px 20px;
-}
-
-.best-selling h2 {
-    font-size: 36px;
-    font-family: IconaBold;
-    margin-bottom: 20px;
-}
-
-.carousel-best {
-    position: relative;
-    overflow: hidden;
+.product-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-.carousel-container-best {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    height: 100%;
     justify-content: center;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+    background-color: black;
+    position: relative;
 }
 
-.carousel-container-best img {
-    width: 80vw; /* Kurangi ukuran gambar agar ada ruang di kanan dan kiri */
-    height: 50vh; /* Kurangi tinggi gambar agar tidak memenuhi layar */
-    object-fit: cover;
-    box-sizing: border-box;
-    margin: 0 10vw; /* Memberikan margin kiri dan kanan */
+/* Card putih membungkus gambar dan info */
+.product-card-best {
+    background-color: white;
+    border-radius: 15px;
+    /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); */
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: auto;
 }
+
+/* Gambar produk */
+.product-image img {
+    width: 250px;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* Info produk dalam card putih */
+.product-info-best {
+    color: black;
+    text-align: left;
+    padding: 30px;
+}
+
+/* BEST SELLER badge */
+.best-seller {
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-family: IconaSemiBold;
+}
+
+#product-name h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    font-family: IconaBold;
+}
+
+#product-category {
+    font-size: 14px;
+    color: #bbbbbb;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-family: IconaRegular;
+}
+
+.price {
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+}
+
+/* Tombol navigasi */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white; 
+    color: black;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 1;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+
+
+
 
 
 /* section our product */
@@ -325,4 +383,104 @@ body {
     display: inline-block;
     margin-top: 10px;
 }
+
+/* contact us */
+/* Footer Container */
+.contact-us {
+    background: black;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Layout untuk Contact Us */
+.contact-container {
+    display: flex;
+    justify-content: center; /* Pusatkan kontennya */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+    position: relative;
+    gap: 150px;
+}
+
+/* Buat judul CONTACT US berada di tengah atas */
+.contact-title {
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-family: IconaBold;
+}
+
+
+/* Bagian Info */
+#about-me {
+    text-align: justify;
+    font-family: IconaRegular;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    flex: 1;
+    text-align: left;
+    max-width: 500px;
+}
+
+.contact-details p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.contact-details i {
+    margin-right: 8px;
+}
+
+/* Form */
+.contact-form {
+    flex: 1;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background: white;
+    color: black;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.contact-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+.contact-form button {
+    background: white;
+    color: black;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: gray;
+    color: white;
+}
+
+/* Copyright */
+.copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    color: gray;
+}
+
 
