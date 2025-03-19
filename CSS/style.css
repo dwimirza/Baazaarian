@@ -1,21 +1,21 @@
 @font-face {
     font-family: IconaBlack;
-    src: url(font/IconaSansTRIAL-Black.otf);
+    src: url(../font/IconaSansTRIAL-Black.otf);
   }
 
 @font-face {
     font-family: IconaBold;
-    src: url(font/IconaSansTRIAL-Bold.otf);
+    src: url(../font/IconaSansTRIAL-Bold.otf);
     }
 
 @font-face {
     font-family: IconaSemibold;
-    src: url(font/IconaSansTRIAL-Semibold.otf);
+    src: url(../font/IconaSansTRIAL-Semibold.otf);
 }
 
 @font-face {
     font-family: IconaRegular;
-    src: url(font/IconaSansTRIAL-Regular.otf);
+    src: url(../font/IconaSansTRIAL-Regular.otf);
 }
 
 * {
