@@ -1,6 +1,8 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addToCart(name, price, image) {
+    let decodedImage = decodeURIComponent(image); // Convert back to original URL
+    console.log(image);
     let item = cart.find(p => p.name === name);
     if (item) {
         item.quantity += 1;
@@ -32,11 +34,11 @@ function renderCart() {
             <div class="cart-item">
                 <img src="${item.image}" alt="${item.name}">
                 <div class="cart-column">
-                <span class="item-name">${item.name}</span>
+                <p class="item-name">${item.name}</p>
                 <span class="item-qty">Quantity : ${item.quantity}</span>
                 <span class="item-price">$${(item.price * item.quantity).toFixed(2)}</span>
                 </div>
-                <span class="remove-btn" onclick="removeFromCart('${item.name}')">❌</span>
+                <span class="remove-btn" onclick="removeFromCart('${item.name}')"><i class="fa-solid fa-x" style="color: black;"></i></span>
             </div>
         `;
     });
