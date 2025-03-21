@@ -91,6 +91,8 @@ const products = [
     }
 ];
 
+
+
 const imgElement = document.getElementById("product-img");
 const nameElement = document.getElementById("product-name");
 const categoryElement = document.getElementById("product-category");
@@ -126,6 +128,18 @@ document.querySelector(".next-btn").addEventListener("click", () => {
 // Memanggil fungsi pertama kali untuk menampilkan produk awal
 updateProduct();
 
+<<<<<<< HEAD
+// Event Listener untuk setiap produk
+document.addEventListener("DOMContentLoaded", () => {
+    const productsCards = document.querySelectorAll(".product-card");
+
+    productsCards.forEach((product, index) => {
+        product.addEventListener("click", () => {
+            // Simpan index produk yang diklik ke localStorage
+            localStorage.setItem("selectedProductIndex", index);
+            // Redirect ke halaman detail
+            window.location.href = "HTML/detail.html";
+=======
 // sort by category
 document.querySelectorAll('.category-product button').forEach(button => {
     button.addEventListener('click', function () {
@@ -142,6 +156,7 @@ document.querySelectorAll('.category-product button').forEach(button => {
             } else {
                 product.classList.add('hidden');
             }
+>>>>>>> a291023c31ff88771a2ed7617a386e424d565d4f
         });
     });
 });
