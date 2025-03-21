@@ -82,9 +82,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Ambil index dari localStorage
     // Ambil index dari localStorage
 const selectedProductIndex = parseInt(localStorage.getItem("selectedProductIndex"));
+const product = products[selectedProductIndex];
 
 if (selectedProductIndex !== null) {
-    const product = products[selectedProductIndex];
+    // const product = products[selectedProductIndex];
 
     // Tampilkan di halaman detail
     document.querySelector(".product-brand").textContent = product.brand;
@@ -107,7 +108,12 @@ if (selectedProductIndex !== null) {
 } else {
     console.error("Product tidak ditemukan atau index salah.");
 }
+document.querySelector("#add-to-cart-btn").addEventListener("click", function() {
+    const priceText = product.price; 
+    const price = parseFloat(priceText.replace(/[^0-9.]/g, "")); 
 
+    addToCart(product.name, price, product.image);
+});
 document.querySelectorAll(".thumbnail-container img").forEach(thumbnail => {
     thumbnail.addEventListener("click", function() {
         const mainImage = document.querySelector(".product-image");
