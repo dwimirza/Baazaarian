@@ -16,7 +16,7 @@
     <!-- nav bar -->
      <nav class="navbar">
         <div class="logo">
-            <h1>BAZAARIAN</h1>
+            <a href="/index.html" class="bazaar"><h1>BAZAARIAN</h1></a>
         </div>
         <div class="cart-logo" onclick="toggleCart()">
             <i class="fa-solid fa-cart-shopping"></i>
@@ -26,15 +26,21 @@
      <!-- product details-->
       <section class="product-detail"> 
         <div class="product-detail-container">
-            <div class="container-image">
-                <img src="https://www.footlocker.id/media/catalog/product/0/1/01-NIKE-F34KBNIK5-NIKFQ0214601-Red.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=1200&width=1200&canvas=1200:1200" alt="Product Image">
+            <div class = "border">
+            <div class="thumbnail-container"> 
             </div>
+            <div class="container-image">
+                <img class="product-image" src="" alt="Product Image">
+            </div>
+
             <div class="container-info">
-                <h2>PRODUCT NAME</h2>
-                <h3>AIR JORDAN XXXIX PF MEN’S BASKETBALL SHOES - GYM RED</h3>
-                <p>MEN</p>
-                <h4 id="price">$599</h4>
-                <h4 id="size">SIZE</h4>
+                <h2 class= "product-brand"></h2>
+                <h3 class="product-title"></h3>
+                <p class="product-category"></p>
+                <h4 id="price" class="product-price"></h4>
+                <h4 id="size">SIZE
+                    <a href="#" class="size-guide" onclick="openSizeGuide()">SIZE GUIDE</a>
+                </h4>
                 <div class="sizes">
                     <button class="size-btn">7</button>
                     <button class="size-btn">7.5</button>
@@ -58,6 +64,7 @@
                     <button>ADD TO CART</button>
                 </div>
             </div>
+            </div>
         </div>
             <!-- Cart Sidebar -->
         <div class="cart" id="cart">
@@ -69,7 +76,7 @@
             </div>
         </div>
       </section>
-    <script src="detail.js"></script> 
+    <script src="../JS/detail.js"></script>
     <script src="../cart.js"></script> 
     </body>
     </html>
