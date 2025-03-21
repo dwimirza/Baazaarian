@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./CSS/style.css">
-        <link rel="stylesheet" href="./CSS/cart.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <title>BAZAARIAN</title>
-    </head>    
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>BAZAARIAN</title>
+</head>
+
 <body>
     <div class="overlay" id="overlay" onclick="toggleCart()"></div>
     <!-- nav bar -->
-     <nav class="navbar">
+    <nav class="navbar">
         <div class="logo">
             <h1>BAZAARIAN</h1>
         </div>
@@ -25,9 +27,9 @@
         <div class="cart-logo" onclick="toggleCart()">
             <i class="fa-solid fa-cart-shopping"></i>
         </div>
-     </nav>
-     <!-- carousel image -->
-     <div class="carousel" id="home">
+    </nav>
+    <!-- carousel image -->
+    <div class="carousel" id="home">
         <div class="carousel-container">
             <img src="/image/image1.jpg" alt="Image 1">
             <img src="/image/image2.jpg" alt="Image 2">
@@ -43,41 +45,41 @@
     </div>
 
     <div class="product-container">
-    <button class="prev-btn">‹</button>
+        <button class="prev-btn">‹</button>
 
-    <!-- Card putih membungkus gambar & info produk -->
-    <div class="product-card-best">
-        <div class="product-image">
-            <img id="product-img" src="" alt="Product Image">
+        <!-- Card putih membungkus gambar & info produk -->
+        <div class="product-card-best">
+            <div class="product-image">
+                <img id="product-img" src="" alt="Product Image">
+            </div>
+
+            <div class="product-info-best">
+                <span id="best-seller" class="best-seller">BEST SELLER</span>
+                <h2 id="product-name"></h2>
+                <p id="product-category"></p>
+                <p id="product-price" class="price"></p>
+            </div>
         </div>
 
-        <div class="product-info-best">
-            <span id="best-seller" class="best-seller">BEST SELLER</span>
-            <h2 id="product-name"></h2>
-            <p id="product-category"></p>
-            <p id="product-price" class="price"></p>
-        </div>
+        <button class="next-btn">›</button>
     </div>
 
-    <button class="next-btn">›</button>
-</div>
-  
-    
-    
-       
+
+
+
 
     <!-- section our product -->
     <section class="our-product" id="product">
         <h2>OUR PRODUCT</h2>
         <div class="category-product">
-            <h3>ALL</h3>
-            <h3>MEN</h3>
-            <h3>WOMEN</h3>
-            <h3>KIDS</h3>
-            <h3>BABY</h3>
+            <button data-category="ALL" class="active">ALL</button>
+            <button data-category="MEN">MEN</button>
+            <button data-category="WOMEN">WOMEN</button>
+            <button data-category="KIDS">KIDS</button>
+            <button data-category="BABY">BABY</button>
         </div>
         <div class="products">
-            <div class="product-card">
+            <div class="product-card" data-category="MEN">
                 <img src="/image/product1.avif" alt="product 1">
                 <div class="product-info">
                     <h3>SMART ANKLE PANTS (WOOL LIKE)</h3>
@@ -86,7 +88,7 @@
                 </div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="MEN">
                 <img src="/image/product2.avif" alt="product 2">
                 <div class="product-info">
                     <h3>FLANNEL SHIRT | LONG SLEEVE CHECKED</h3>
@@ -95,7 +97,7 @@
                 </div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="WOMEN">
                 <img src="/image/product3.avif" alt="product 3">
                 <div class="product-info">
                     <h3>SEERSUCKER VOLUME SKIRT</h3>
@@ -104,7 +106,7 @@
                 </div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="WOMEN">
                 <img src="/image/product4.avif" alt="product 4">
                 <div class="product-info">
                     <h3>MESH LONG BELT</h3>
@@ -113,7 +115,7 @@
                 </div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="KIDS">
                 <img src="/image/product5.avif" alt="product 5">
                 <div class="product-info">
                     <h3>KIDS AIPISM COTTON CREW NECK T-SHIRT</h3>
@@ -122,7 +124,7 @@
                 </div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="KIDS">
                 <img src="/image/product6.avif" alt="product 6">
                 <div class="product-info">
                     <h3>GIRLS RIBBED CROPPED BRATOP</h3>
@@ -131,7 +133,7 @@
                 </div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="BABY">
                 <img src="/image/product7.avif" alt="product 7">
                 <div class="product-info">
                     <h3>ONE PIECE OUTFIT | SLEEVELESS</h3>
@@ -140,7 +142,7 @@
                 </div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="BABY">
                 <img src="/image/product8.avif" alt="product 8">
                 <div class="product-info">
                     <h3>RIBBED ONE PIECE OUTFIT STRIPE</h3>
@@ -149,7 +151,7 @@
                 </div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="MEN">
                 <img src="/image/product9.avif" alt="product 9">
                 <div class="product-info">
                     <h3>WAFFLE V NECK SWEATER</h3>
@@ -159,14 +161,14 @@
             </div>
         </div>
         <!-- Cart Sidebar -->
-    <div class="cart" id="cart">
-        <h2>Cart <span style="float: right; cursor: pointer;" onclick="toggleCart()">❌</span></h2>
-        <div id="cart-items"></div>
-        <div class="row">
-            <h3 class="total-price">Total: <br><span id="total-price">0.00</span></h3>
-            <button class="checkout-btn" onclick="checkout()">Checkout</button>
+        <div class="cart" id="cart">
+            <h2>Cart <span style="float: right; cursor: pointer;" onclick="toggleCart()">❌</span></h2>
+            <div id="cart-items"></div>
+            <div class="row">
+                <h3 class="total-price">Total: <br><span id="total-price">0.00</span></h3>
+                <button class="checkout-btn" onclick="checkout()">Checkout</button>
+            </div>
         </div>
-    </div>
     </section>
 
     <script src="./JS/script.js"></script>
@@ -174,13 +176,18 @@
 </body>
 <footer class="contact-us" id="contact">
     <div class="contact-title">CONTACT US</div> <!-- Tambahkan ini -->
-    
+
     <div class="contact-container">
         <div class="contact-info">
             <p id="about-me">
-                Bazaarian is the ultimate destination for fashion and lifestyle enthusiasts looking to express themselves through the latest trends. With a curated selection of products from top brands and independent designers, 
-                Bazaarian offers an exclusive and inspiring shopping experience. Through our online platform and offline events in various cities, we are committed to connecting the fashion community with the latest innovations 
-                in style and lifestyle. Bazaarian is more than just a marketplace—it’s a space for individuals to ignite their creativity, explore their identity, and celebrate diversity in the world of fashion and lifestyle.
+                Bazaarian is the ultimate destination for fashion and lifestyle enthusiasts looking to express
+                themselves through the latest trends. With a curated selection of products from top brands and
+                independent designers,
+                Bazaarian offers an exclusive and inspiring shopping experience. Through our online platform and offline
+                events in various cities, we are committed to connecting the fashion community with the latest
+                innovations
+                in style and lifestyle. Bazaarian is more than just a marketplace—it’s a space for individuals to ignite
+                their creativity, explore their identity, and celebrate diversity in the world of fashion and lifestyle.
             </p>
             <div class="contact-details">
                 <p><i class="fa-brands fa-instagram"></i> @bazaarian.official</p>
@@ -188,7 +195,7 @@
                 <p><i class="fa-solid fa-location-dot"></i> Kukusan - Depok</p>
             </div>
         </div>
-        
+
         <div class="contact-form">
             <input type="text" placeholder="NAME">
             <input type="text" placeholder="EMAIL/MOBILE NUMBER">

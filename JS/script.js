@@ -12,7 +12,7 @@ function showSlide(index) {
         currentIndex = index;
     }
 
-    document.querySelector(".carousel-container").style.transform = 
+    document.querySelector(".carousel-container").style.transform =
         `translateX(-${currentIndex * 100}%)`;
 }
 
@@ -62,7 +62,7 @@ setInterval(nextSlide1, 3000);
 
 
 // navbar scrolled
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll", function () {
     let navbar = document.querySelector(".navbar");
     navbar.classList.toggle("scrolled", window.scrollY > 50);
 });
@@ -128,6 +128,7 @@ document.querySelector(".next-btn").addEventListener("click", () => {
 // Memanggil fungsi pertama kali untuk menampilkan produk awal
 updateProduct();
 
+<<<<<<< HEAD
 // Event Listener untuk setiap produk
 document.addEventListener("DOMContentLoaded", () => {
     const productsCards = document.querySelectorAll(".product-card");
@@ -138,6 +139,24 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("selectedProductIndex", index);
             // Redirect ke halaman detail
             window.location.href = "HTML/detail.html";
+=======
+// sort by category
+document.querySelectorAll('.category-product button').forEach(button => {
+    button.addEventListener('click', function () {
+        let category = this.getAttribute('data-category');
+
+        // Hapus class 'active' dari semua tombol dan tambahkan ke tombol yang diklik
+        document.querySelectorAll('.category-product button').forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+
+        // Filter produk berdasarkan kategori
+        document.querySelectorAll('.product-card').forEach(product => {
+            if (category === "ALL" || product.getAttribute('data-category') === category) {
+                product.classList.remove('hidden');
+            } else {
+                product.classList.add('hidden');
+            }
+>>>>>>> a291023c31ff88771a2ed7617a386e424d565d4f
         });
     });
 });
