@@ -79,20 +79,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
-    // Ambil index dari localStorage
-    // Ambil index dari localStorage
-const selectedProductIndex = parseInt(localStorage.getItem("selectedProductIndex"));
-const product = products[selectedProductIndex];
+    // Ambil nama produk dari localStorage
+    const selectedProductName = localStorage.getItem("selectedProductName");
 
-if (selectedProductIndex !== null) {
-    // const product = products[selectedProductIndex];
+    // Cari produk berdasarkan nama
+    const product = products.find(p => p.name === selectedProductName);
 
-    // Tampilkan di halaman detail
-    document.querySelector(".product-brand").textContent = product.brand;
-    document.querySelector(".product-title").textContent = product.name;
-    document.querySelector(".product-category").textContent = product.category;
-    document.querySelector(".product-price").textContent = product.price;
-    document.querySelector(".product-image").src = product.image;
+    if (product) {
+        // Tampilkan di halaman detail
+        document.querySelector(".product-brand").textContent = product.brand;
+        document.querySelector(".product-title").textContent = product.name;
+        document.querySelector(".product-category").textContent = product.category;
+        document.querySelector(".product-price").textContent = product.price;
+        document.querySelector(".product-image").src = product.image;
 
     // Tambahkan thumbnail
     const thumbnailContainer = document.querySelector(".thumbnail-container");
@@ -122,7 +121,3 @@ document.querySelectorAll(".thumbnail-container img").forEach(thumbnail => {
 });
 
 });
-
-
-
-
