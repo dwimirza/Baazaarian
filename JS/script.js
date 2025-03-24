@@ -159,4 +159,10 @@ document.querySelectorAll('.category-product button').forEach(button => {
         });
     });
 });
+
+function toggleMenu() {
+    document.querySelector('.list-item').classList.toggle('active');
+    document.querySelector('.cart-logo').classList.toggle('active');
+}
+
         

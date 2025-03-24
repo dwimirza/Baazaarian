@@ -38,7 +38,6 @@
     z-index: 1;
     display: flex;
     justify-content: space-between;
-    /* Ubah jika perlu */
     align-items: center;
 }
 
@@ -101,6 +100,12 @@
 }
 
 .cart-logo i {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.menu-icon {
+    display: none;
     font-size: 18px;
     cursor: pointer;
 }
@@ -496,4 +501,195 @@ zx .contact-form button:active {
     margin-top: 20px;
     font-size: 14px;
     color: gray;
+}
+
+
+/* Responsive Design for Mobile */
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between; /* Memberi jarak maksimum */
+        align-items: center;
+        padding: 10px 20px; /* Menambah padding agar lebih lega */
+    }
+    
+    .logo {
+        flex-grow: 1; /* Membuat logo lebih fleksibel */
+    }
+    
+    .menu-icon {
+        margin-left: auto; /* Mendorong ikon menu ke kanan */
+        padding-right: 20px; /* Menambah jarak dari tepi kanan */
+    }
+    
+    .menu-icon {
+        display: block;
+        color: white;
+    }
+
+    .navbar.scrolled .logo h1,
+    .navbar.scrolled .cart-logo i,
+    .navbar.scrolled .menu-icon {
+        color: black;
+    }
+
+    .list-item {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: white;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        border-radius: 10px;
+        width: 200px;
+    }
+
+    .list-item.active {
+        display: block;
+    }
+
+    .list-item ul {
+        flex-direction: column;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+    }
+
+    .list-item ul li {
+        margin: 0;
+    }
+
+    .list-item ul li a {
+        color: black;
+    }
+
+    .cart-logo {
+        margin-right: 10px;
+    }
+
+    .carousel {
+        height: 60vh;
+    }
+
+    .carousel-container img {
+        height: 60vh;
+    }
+
+    .prev,
+    .next {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .product-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .product-card-best {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 320px;
+        margin: auto;
+    }
+    
+    .product-image img {
+        width: 100%;
+        max-width: 250px;
+        border-radius: 8px;
+    }
+    
+    .product-info-best {
+        padding: 15px;
+        width: 100%;
+    }
+    
+    .best-seller {
+        background: red;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        font-family: IconaSemiBold;
+    }
+    
+    #product-name h2 {
+        font-size: 24px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        font-family: IconaBold;
+    }
+    
+    #product-category {
+        font-size: 14px;
+        color: #bbbbbb;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-family: IconaRegular;
+    }
+    
+    .price {
+        font-size: 18px;
+        color: black;
+        font-weight: bold;
+    }
+
+    .prev-btn {
+        left: 10px; /* Ubah sesuai kebutuhan */
+    }
+
+    .next-btn {
+        right: 10px; /* Ubah sesuai kebutuhan */
+    }
+
+    .our-product h2 {
+        font-size: 28px;
+    }
+
+    .category-product {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .category-product button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .product-card {
+        width: 100%;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .contact-form {
+        width: 100%;
+        max-width: 400px;
+        margin: auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .contact-form button {
+        width: 100%;
+    }
+
 }
