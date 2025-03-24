@@ -16,6 +16,16 @@
             padding: 0;
             text-align: center;
         }
+
+        .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+        background-color: white;
+        border-bottom: 1px solid #ddd; /* Garis tipis bawah navbar */
+        }
+
         .header {
             background-color: #cfcfcf;
             color: black;
@@ -69,6 +79,56 @@
             display: block;
         }
 
+        @media (max-width: 768px) {
+            
+            .navbar {
+                display: flex;
+                justify-content: space-between; /* Memberi jarak maksimum */
+                align-items: center;
+                padding: 10px 20px; /* Menambah padding agar lebih lega */
+            }
+
+            .logo {
+                flex-grow: 1; /* Membuat logo lebih fleksibel */
+            }
+
+            .logo h1 {
+                margin-left: 0px;
+                font-size: 20px;
+                font-family: "Iconablack";
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+            .header h2 {
+                font-size: 14px;
+            }
+            td, th {
+                padding: 10px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 15px;
+            }
+            .header h1 {
+                font-size: 20px;
+            }
+            .header h2 {
+                font-size: 12px;
+            }
+            td, th {
+                padding: 8px;
+                font-size: 10px;
+            }
+            .size-image img {
+                max-width: 100%;
+            }
+        }
+        
     </style>
     </head>    
 <body>
@@ -77,9 +137,6 @@
      <nav class="navbar">
         <div class="logo">
             <a href="/index.html" class="bazaar"><h1>BAZAARIAN</h1></a>
-        </div>
-        <div class="cart-logo" onclick="toggleCart()">
-            <i class="fa-solid fa-cart-shopping"></i>
         </div>
      </nav>
     

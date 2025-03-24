@@ -63,35 +63,36 @@
 
 
 .border {   
-    display: inline-flex;
+    display: flex;
     align-items: flex-start; /* Biar sejajar di atas */
     justify-content: space-evenly; /* Atur jarak antar elemen */
     width: 100%;
     max-width: 1200px; /* Sesuaikan dengan ukuran layout */
     margin: 0 auto; /* Biar di tengah */;
+    vertical-align: top;
 }
 
 .product-detail-container {
     display: flex;
     justify-content: flex-start;
-    padding: 40px;
+    padding: 25px;
     
 }
 
-.thumbnail-container{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
 .thumbnail-container img {
-    display: flex;
-    gap: 10px;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .thumbnail-container {
+    display: flex;
+    flex-direction: column;
     width: 70px;
     height: 70px;
+    gap: 10px;
     object-fit: cover;
     border-radius: 5px;
     cursor: pointer;
@@ -109,22 +110,24 @@
 
 .container-image {
     flex: 1;
-    max-width: 34%;
-    margin-right: 120px;
+    max-width: 38%;
+    margin-right: 180px;
+    margin-left: 10px;
 }
 
 .container-image img {
     width: 100%;
-    max-width: 550px;
-    display: block;
+    display: flex;
 }
 
 .container-info {
-    flex: 1;
-    padding: 35px;
-    max-width: 500px; /* Atur agar lebih lebar */
-    margin-right: 80px;
-    margin-top: -35px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    padding: px;
+    max-width: 450px; /* Atur agar lebih lebar */
+    margin-right: 50px;
+    margin-top: 0px;
 }
 
 .container-info h2 {
@@ -158,12 +161,12 @@
     font-family: IconaSemibold;
 }
 
-.sizes {
+.size-container {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 10px;
-    max-width: 700px;
+    max-width: 100%;
 }
 
 .size-guide {
@@ -179,18 +182,27 @@
     color: #0056b3;
 }
 
-.sizes button {
-    padding: 15px 20px;
-    width: 100px;
+.size-container button {
+    max-width: 100%;
     font-size: 16px;
     font-family: "Poppins", sans-serif;
     cursor: pointer;
 }
 
-.size-btn {
+.size-btn-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(135px, 1fr));
+    gap: 10px;
+    justify-content: center;
+}
+
+.size-btn 
+{
+    width: 100%; /* Supaya tombol menyesuaikan lebar kolom */
+    height: 60px; /* Bisa diatur sesuai keinginan */
+    text-align: center;
     background: #f5f5f5;
     border: 1px solid #000;
-    padding: 10px 10px;
     cursor: pointer;
     font-size: 16px;
     transition: 0.3s;
@@ -251,11 +263,160 @@
 }
 
 .addCart button {
-    padding: 10px 20px;
+    padding: 10px 15px;
     width: 100%;
     background-color: black;
     color: white;
     font-size: 16px;
     font-family: IconaRegular;
     cursor: pointer;
+}
+
+.addCart button:hover {
+    background-color: #333; /* Warna latar belakang saat dihover */
+}
+
+@media (max-width: 768px) {
+    .border {
+        flex-direction: column; /* Susun vertikal di layar kecil */
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between; /* Memberi jarak maksimum */
+        align-items: center;
+        padding: 10px 20px; /* Menambah padding agar lebih lega */
+    }
+
+    .logo {
+        flex-grow: 1; /* Membuat logo lebih fleksibel */
+    }
+
+    .logo h1 {
+        margin-left: -30px;
+        font-size: 20px;
+        font-family: "Iconablack";
+    }
+
+    .product-detail-container {
+        align-items: center;
+    }
+
+    .thumbnail-container {
+        order: 2; /* Pindahkan ke bawah */
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+    }
+
+    .thumbnail-container img {
+        width: 70px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .container-image {
+        justify-content: center;
+        order: 1;
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .container-info {
+        justify-content: center;
+        order: 3; /* Pindahkan ke bawah gambar */
+        width: 100%;
+        display: flex;
+        margin-top: 15px;
+        flex-direction: column; /* Susun vertikal di dalam wrapper */
+    }
+
+    .container-info h2 {
+        font-size: 16px;
+    }
+
+    .container-info h3 {
+        font-size: 22px;
+    }
+
+    .container-info p {
+        font-size: 14px;
+    }
+
+    .container-info h4 {
+        font-size: 16px;
+    }   
+
+    .product-info {
+        order: 1; /* Pastikan product info tetap di atas */
+    }
+
+    .size-container {
+        padding: 5px; /* Sesuaikan padding */
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        
+    }
+
+    .size-header {
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        margin-top: 10px;
+        flex-direction: column; /* Susun vertikal di dalam wrapper */
+    }
+
+    #size {
+        font-size: 16px;
+        margin-top: 15px;
+        margin-bottom: 12px;
+        font-family: IconaSemibold;
+    }
+
+    .size-guide {
+        font-size: 10px;
+        font-weight: 500;
+        text-decoration: underline;
+        margin-left: 260px; /* Jarak ke kiri biar sejajar */
+        color: #007BFF;
+        cursor: pointer;
+    }
+
+    .size-btn-container {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(115px, 1fr));
+        justify-content: center;
+    }
+
+    .size-btn-container button {
+        font-size: 12px; /* Sesuaikan ukuran font tombol */
+        width: 100%;
+    }
+
+    .size-btn {
+        padding: 5px 10px; /* Sesuaikan tinggi tombol */
+        transform: scale(0.8);
+        width: 100%;
+    }
+    
+    .addCart {
+        justify-content: center;
+        order: 4; /* Pastikan size, quantity, dan add to cart di bawah gambar */
+    }
+
+    .quantity-container {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        border: 0.5px solid grey;
+        background: #f5f5f5;
+        border-radius: 15px;
+        padding: 5px 10px;
+        width: fit-content;
+    }
 }
