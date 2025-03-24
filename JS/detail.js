@@ -76,6 +76,69 @@ document.addEventListener("DOMContentLoaded", () => {
             category: "Women",
             price: "$23.00",
             bestSeller: true
+        },
+        {
+            brand: "H&M",
+            image: "/image/product4.png",
+            thumbnails: [
+                "/image/product4.png",
+                "/image/product4(1).png",
+                "/image/product4(2).png",
+            ],
+            name: "MUSCLE FIT SHORT-SLEEVED SHIRT",
+            category: "Men",
+            price: "$11.00",
+        },
+        {
+            brand: "UNIQLO",
+            image: "/image/product5.avif",
+            thumbnails: [
+                "/image/product5.avif",
+                "/image/product5(1).avif",
+                "/image/product5(2).avif",
+                "/image/product5(3).avif"
+            ],
+            name: "SOFT FLANNEL GATHERED BLOUSE",
+            category: "Women",
+            price: "$8.00",
+        },
+        {
+            brand: "UNIQLO",
+            image: "/image/product6.avif",
+            thumbnails: [
+                "/image/product6.avif",
+                "/image/product6(1).avif",
+                "/image/product6(2).avif"
+            ],
+            name: "DRY SWEAT WIDE PANTS",
+            category: "Women",
+            price: "$12.00",
+        },
+        {
+            brand: "UNIQLO",
+            image: "/image/product7.avif",
+            thumbnails: [
+                "/image/product7.avif",
+                "/image/product7(1).avif",
+                "/image/product7(2).avif"
+            ],
+            name: "GIRLS RIBBED CROPPED BRATOP",
+            category: "Kids",
+            price: "$12.00",
+        },
+        {
+            brand: "UNIQLO",
+            image: "/image/product8.avif",
+            name: "RIBBED ONE PIECE OUTFIT STRIPE",
+            category: "Baby",
+            price: "$12.00",
+        },
+        {
+            brand: "UNIQLO",
+            image: "/image/product9.avif",
+            name: "KIDS AIPISM COTTON CREW NECK T-SHIRT",
+            category: "Kids",
+            price: "$19.00",
         }
     ];
 
