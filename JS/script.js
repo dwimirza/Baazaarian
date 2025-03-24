@@ -84,14 +84,18 @@ const products = [
     },
     {
         image: "./image/product3.avif",
-        name: "SEERSUCKER VOLUME SKIRT",
+        name: "SEERSUCKER VOLUME SKIRT | CHECKED",
         category: "Women",
         price: "$23.00",
         bestSeller: true
     }
 ];
 
-
+const storedProducts = JSON.parse(localStorage.getItem("ourProducts"));
+if (storedProducts) {
+    products.length = 0; // Kosongkan array tanpa mengganti referensi
+    products.push(...storedProducts); // Isi ulang dengan data dari localStorage
+}
 
 const imgElement = document.getElementById("product-img");
 const nameElement = document.getElementById("product-name");
@@ -105,6 +109,8 @@ function updateProduct() {
     nameElement.textContent = products[currentIndex].name;
     categoryElement.textContent = products[currentIndex].category;
     priceElement.textContent = products[currentIndex].price;
+
+    bestSellerElement.style.display = products[currentIndex].bestSeller ? "inline-block" : "none";
 
     // Menampilkan atau menyembunyikan label Best Seller
     if (products[currentIndex].bestSeller) {
@@ -128,18 +134,28 @@ document.querySelector(".next-btn").addEventListener("click", () => {
 // Memanggil fungsi pertama kali untuk menampilkan produk awal
 updateProduct();
 // Event Listener untuk setiap produk
-document.addEventListener("DOMContentLoaded", () => {
-    const productsCards = document.querySelectorAll(".product-card");
 
-    productsCards.forEach((product, index) => {
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const productsCards = document.querySelectorAll(".product-card, .product-card-best");
+
+    productsCards.forEach((product) => {
         product.addEventListener("click", () => {
-            // Simpan index produk yang diklik ke localStorage
-            localStorage.setItem("selectedProductIndex", index);
-            // Redirect ke halaman detail
-            window.location.href = "HTML/detail.html";
+            // Ambil nama produk yang diklik
+            const productName = product.querySelector("#product-name")?.textContent || 
+                                product.querySelector("h3")?.textContent;
+
+            if (productName) {
+                // Simpan nama produk ke localStorage
+                localStorage.setItem("selectedProductName", productName);
+                window.location.href = "HTML/detail.html";
+            }
         });
     });
 });
+
+
 // sort by category
 document.querySelectorAll('.category-product button').forEach(button => {
     button.addEventListener('click', function () {
