@@ -172,9 +172,10 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 document.querySelector("#add-to-cart-btn").addEventListener("click", function() {
     const priceText = product.price; 
-    const price = parseFloat(priceText.replace(/[^0-9.]/g, "")); 
-
-    addToCart(product.name, price, product.image);
+    const price = parseFloat(priceText.replace(/[^0-9.]/g, ""));
+     
+    const quantity = document.getElementById('quantity').value;
+    addToCart(product.name, price, product.image, quantity);
 });
 document.querySelectorAll(".thumbnail-container img").forEach(thumbnail => {
     thumbnail.addEventListener("click", function() {

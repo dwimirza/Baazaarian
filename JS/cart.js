@@ -1,13 +1,13 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function addToCart(name, price, image) {
+function addToCart(name, price, image, quantity) {
     let decodedImage = decodeURIComponent(image); // Convert back to original URL
     console.log(image);
     let item = cart.find(p => p.name === name);
     if (item) {
-        item.quantity += 1;
+        item.quantity = parseInt(item.quantity) + parseInt(quantity);
     } else {
-        cart.push({ name, price, image, quantity: 1 });
+        cart.push({ name, price, image, quantity });
     }
     saveAndUpdateCart();
     toggleCart(true); // Open cart when adding
