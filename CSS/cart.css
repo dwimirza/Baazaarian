@@ -141,3 +141,9 @@
         /* Ensure it appears on a new line */
         margin-top: 5px;
     }
+
+@media screen and (max-width:768px) {
+    .cart {
+        width: 100%;
+    }
+}
