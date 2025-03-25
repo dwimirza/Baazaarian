@@ -30,6 +30,7 @@
             <div class="thumbnail-container"> 
             </div>
             <div class="container-image">
+                <h2 class="product-brand-img"></h2>
                 <img class="product-image" src="" alt="Product Image">
             </div>
 
@@ -71,15 +72,30 @@
         
             <!-- Cart Sidebar -->
         <div class="cart" id="cart">
-            <h2>Cart <span style="float: right; cursor: pointer;" onclick="toggleCart()">❌</span></h2>
+            <h2>CART <span style="float: right; cursor: pointer;" onclick="toggleCart()"><i class="fa-solid fa-x" style="color: black;"></i></span></h2>
             <div id="cart-items"></div>
             <div class="row">
-                <h3 class="total-price">Total: <br><span id="total-price">0.00</span></h3>
-                <button class="checkout-btn" onclick="checkout()">Checkout</button>
+                <h3 class="total-price">TOTAL: <br><span id="total-price">0.00</span></h3>
+                <button class="checkout-btn" onclick="checkout()">CHECKOUT</button>
             </div>
         </div>
       </section>
     <script src="../JS/detail.js"></script>
     <script src="../JS/cart.js"></script> 
+    <script>
+        function showBrandOnMobile() {
+            let brandElement = document.querySelector('.product-brand-img');
+    
+            if (window.innerWidth <= 768) {
+                brandElement.classList.add('active');
+            } else {
+                brandElement.classList.remove('active');
+            }
+        }
+    
+        showBrandOnMobile();
+    
+        window.addEventListener('resize', showBrandOnMobile);
+    </script>
     </body>
     </html>

@@ -35,7 +35,7 @@ function renderCart() {
                 <img src="${item.image}" alt="${item.name}">
                 <div class="cart-column">
                 <p class="item-name">${item.name}</p>
-                <span class="item-qty">Quantity : ${item.quantity}</span>
+                <span class="item-qty">QUANTITY : ${item.quantity}</span>
                 <span class="item-price">$${(item.price * item.quantity).toFixed(2)}</span>
                 </div>
                 <span class="remove-btn" onclick="removeFromCart('${item.name}')"><i class="fa-solid fa-x" style="color: black;"></i></span>

@@ -150,6 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (product) {
         // Tampilkan di halaman detail
+        document.querySelector(".product-brand-img").textContent = product.brand;
         document.querySelector(".product-brand").textContent = product.brand;
         document.querySelector(".product-title").textContent = product.name;
         document.querySelector(".product-category").textContent = product.category;

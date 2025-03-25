@@ -24,6 +24,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Integral CF', sans-serif;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
 .navbar {
@@ -33,11 +35,6 @@
     padding: 20px 50px;
     background-color: white;
     border-bottom: 1px solid #ddd; /* Garis tipis bawah navbar */
-}
-
-.navbar .logo, .navbar .list-item, .navbar .cart {
-    /* Menambahkan margin atau padding untuk menyesuaikan posisi */
-    margin: 0 50px; /* Menambahkan jarak antara elemen navbar */
 }
 
 .logo h1 {
@@ -58,7 +55,7 @@
 }
 
 .product-detail{
-    width: 100vw;
+    width: 100%;
 }
 
 
@@ -73,10 +70,7 @@
 }
 
 .product-detail-container {
-    display: flex;
-    justify-content: flex-start;
     padding: 25px;
-    
 }
 
 .thumbnail-container img {
@@ -111,8 +105,11 @@
 .container-image {
     flex: 1;
     max-width: 38%;
-    margin-right: 180px;
-    margin-left: 10px;
+    /* margin-right: 180px; */
+}
+
+.product-brand-img {
+    display: none;
 }
 
 .container-image img {
@@ -124,8 +121,7 @@
     display: flex;
     flex-direction: column;
     gap: 0px;
-    padding: px;
-    max-width: 450px; /* Atur agar lebih lebar */
+    max-width: 500px; /* Atur agar lebih lebar */
     margin-right: 50px;
     margin-top: 0px;
 }
@@ -143,6 +139,7 @@
 .container-info p {
     font-size: 18px;
     font-family: IconaRegular;
+    text-transform: uppercase;
 }
 
 .container-info h4 {
@@ -284,16 +281,9 @@
     .navbar {
         display: flex;
         justify-content: space-between; /* Memberi jarak maksimum */
-        align-items: center;
-        padding: 10px 20px; /* Menambah padding agar lebih lega */
-    }
-
-    .logo {
-        flex-grow: 1; /* Membuat logo lebih fleksibel */
     }
 
     .logo h1 {
-        margin-left: -30px;
         font-size: 20px;
         font-family: "Iconablack";
     }
@@ -318,6 +308,13 @@
         transition: all 0.3s ease;
     }
 
+    .product-brand-img.active {
+        display: block;
+        font-size: 18px;
+        font-family: IconaBold;
+        margin-bottom: 16px;
+    }
+
     .container-image {
         justify-content: center;
         order: 1;
@@ -335,7 +332,7 @@
     }
 
     .container-info h2 {
-        font-size: 16px;
+        display: none;
     }
 
     .container-info h3 {
@@ -344,10 +341,11 @@
 
     .container-info p {
         font-size: 14px;
+        text-transform: uppercase;
     }
 
     .container-info h4 {
-        font-size: 16px;
+        font-size: 18px;
     }   
 
     .product-info {
@@ -374,6 +372,7 @@
         font-size: 16px;
         margin-top: 15px;
         margin-bottom: 12px;
+        margin-left: -5px;
         font-family: IconaSemibold;
     }
 
@@ -381,7 +380,7 @@
         font-size: 10px;
         font-weight: 500;
         text-decoration: underline;
-        margin-left: 260px; /* Jarak ke kiri biar sejajar */
+        margin-left: 230px; /* Jarak ke kiri biar sejajar */
         color: #007BFF;
         cursor: pointer;
     }
